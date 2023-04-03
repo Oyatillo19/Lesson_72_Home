@@ -1,0 +1,12 @@
+### Student create
+POST localhost:8080/student/create
+Content-Type: application/json
+
+{
+  "name": "Eshmat",
+  "surname": "Eshmatov",
+  "level": "1-kurs",
+  "age": "18",
+  "gender": "male",
+  "createddate": "2021-07-10"
+}
