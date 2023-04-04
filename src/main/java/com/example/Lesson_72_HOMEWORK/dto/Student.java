@@ -18,6 +18,6 @@ public class Student {
   private  String level;
   private  Integer age;
   private StudentGender gender;
-  private LocalDate createdDate;
+  private LocalDate createdDate = LocalDate.now();
 
 }

@@ -7,6 +7,6 @@ Content-Type: application/json
   "surname": "Eshmatov",
   "level": "1-kurs",
   "age": "18",
-  "gender": "male",
-  "createddate": "2021-07-10"
+  "gender": "MALE"
+
 }

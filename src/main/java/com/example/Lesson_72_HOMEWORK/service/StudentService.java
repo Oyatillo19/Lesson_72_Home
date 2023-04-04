@@ -17,26 +17,28 @@ import java.util.Optional;
 public class StudentService {
 
     private StudentRepository studentRepository;
-
+    /// id,name,surname,level,age,Gender,createdDate
     public Student create(Student dto) {
         StudentEntity entity = new StudentEntity();
+
+        entity.setId(dto.getId());
         entity.setName(dto.getName());
         entity.setSurname(dto.getSurname());
-        entity.setCreateddate(dto.getCreatedDate());
         entity.setLevel(dto.getLevel());
-        entity.setGender(dto.getGender());
         entity.setAge(dto.getAge());
-
-
-        if (dto.getName() == null || dto.getName().isBlank()) {
-            throw new AppBadRequestExp("Name qani?");
-        }
-        if (dto.getSurname() == null || dto.getSurname().isBlank()) {
-            throw new AppBadRequestExp("Surname qani?");
-        }
-
+        entity.setGender(dto.getGender());
+        entity.setCreatedDate(dto.getCreatedDate());
+//
+//
+//        if (dto.getName() == null || dto.getName().isBlank()) {
+//            throw new AppBadRequestExp("Name qani?");
+//        }
+//        if (dto.getSurname() == null || dto.getSurname().isBlank()) {
+//            throw new AppBadRequestExp("Surname qani?");
+//        }
         studentRepository.save(entity);
         dto.setId(entity.getId());
+        dto.setGender(entity.getGender());
         return dto;
 
 
@@ -53,13 +55,14 @@ public class StudentService {
 //
 //    }
 
-    public StudentEntity get(Integer id) {
-        Optional<StudentEntity> optional = studentRepository.findById(id);
-        if (optional.isEmpty()) {
-            throw new AppBadRequestExp("Student not found: " + id);
-        }
-        return optional.get();
-    }
+
+//    public StudentEntity get(Integer id) {
+//        Optional<StudentEntity> optional = studentRepository.findById(id);
+//        if (optional.isEmpty()) {
+//            throw new AppBadRequestExp("Student not found: " + id);
+//        }
+//        return optional.get();
+//    }
 
     public List<Student> getAll() {
         Iterable<StudentEntity> iterable = studentRepository.findAll();

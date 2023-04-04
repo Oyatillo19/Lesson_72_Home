@@ -31,13 +31,13 @@ public class StudentEntity {
 
     @Column(name = "age")
     private Integer age;
-    @Column(name = "gender")
     @Enumerated(EnumType.STRING)
-    private StudentGender gender;
+    @Column(name = "gender")
+    private StudentGender gender = StudentGender.MALE;
 
 
     @Column(name = "createddate")
-    private LocalDate createddate;
+    private LocalDate createdDate = LocalDate.now();
 
 
 
