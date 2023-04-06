@@ -1,0 +1,43 @@
+### Course create
+POST localhost:8080/course/create
+Content-Type: application/json
+
+{
+  "name": "C++",
+  "price": "500.000",
+  "duration": "2023-01-01"
+}
+
+### Course getbyid
+GET localhost:8080/course/get/4
+
+### Course list
+GET localhost:8080/course/list
+
+### Course update
+PUT localhost:8080/course/update/5
+Content-Type: application/json
+
+{
+  "name":"Algebra",
+  "price":"500.000",
+  "duration":"2022-02-10",
+  "createddate":"2023-12-10"
+
+}
+
+### Course delete
+DELETE localhost:8080/course/delete/4
+
+### Course findname
+GET localhost:8080/course/name/Rus tili
+
+### Course findprice
+GET localhost:8080/course/price/100
+
+### Course findduration
+GET localhost:8080/course/duration/2023-01-01
+
+### Coursebetweenddate
+GET localhost:8080/course/betweendate/2023-04-05/2023-04-06
+

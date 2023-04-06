@@ -21,7 +21,7 @@ Course
   4. Update Course.
   5. Delete Course
   6. Get method by each field. (getByName, getByPrice,getByDuration)
-  7. Get Course list between given 2 prices.
+ 7. Get Course list between given 2 prices.
   8. Get Course list between 2 createdDates
   9. Course Pagination.
   10. Course Pagination. List should be sorted by createdDate.

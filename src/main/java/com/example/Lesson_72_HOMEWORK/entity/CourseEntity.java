@@ -28,8 +28,8 @@ public class CourseEntity {
     @Column(name = "duration")
     private String duration;
 
-    @Column(name = "createddate")
-    private LocalDate createddate;
+    @Column(name = "createddate" )
+    private LocalDate createddate=LocalDate.now();
 
 
 

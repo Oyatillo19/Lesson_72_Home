@@ -7,6 +7,7 @@ import com.example.Lesson_72_HOMEWORK.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -140,6 +141,114 @@ public class StudentService {
 
         }
 
+        return studentList;
+    }
+
+    public Object findsurname(String surname) {
+        List<StudentEntity>studentEntities = studentRepository.getAllBySurname(surname);
+        List<StudentEntity> studentList = new LinkedList<>();
+        for(StudentEntity entity : studentEntities){
+            Student studentDTO = new Student();
+            entity.setName(studentDTO.getName());
+            entity.setSurname(studentDTO.getSurname());
+            entity.setLevel(studentDTO.getLevel());
+            entity.setAge(studentDTO.getAge());
+            entity.setGender(studentDTO.getGender());
+            entity.setCreatedDate(studentDTO.getCreatedDate());
+            studentList.add(entity);
+
+        }
+
+        return studentList;
+
+    }
+
+    public Object findlevel(String level) {
+        List<StudentEntity>studentEntities = studentRepository.getAllByLevel(level);
+        List<StudentEntity> studentList = new LinkedList<>();
+        for(StudentEntity entity : studentEntities){
+            Student studentDTO = new Student();
+            entity.setName(studentDTO.getName());
+            entity.setSurname(studentDTO.getSurname());
+            entity.setLevel(studentDTO.getLevel());
+            entity.setAge(studentDTO.getAge());
+            entity.setGender(studentDTO.getGender());
+            entity.setCreatedDate(studentDTO.getCreatedDate());
+            studentList.add(entity);
+
+        }
+
+        return studentList;
+    }
+
+    public Object findage(String age) {
+        List<StudentEntity>studentEntities = studentRepository.getAllByAge(age);
+        List<StudentEntity> studentList = new LinkedList<>();
+        for(StudentEntity entity : studentEntities){
+            Student studentDTO = new Student();
+            entity.setName(studentDTO.getName());
+            entity.setSurname(studentDTO.getSurname());
+            entity.setLevel(studentDTO.getLevel());
+            entity.setAge(studentDTO.getAge());
+            entity.setGender(studentDTO.getGender());
+            entity.setCreatedDate(studentDTO.getCreatedDate());
+            studentList.add(entity);
+
+        }
+
+        return studentList;
+    }
+
+    public Object findgender(String gender) {
+        List<StudentEntity>studentEntities = studentRepository.getAllByGender(gender);
+        List<StudentEntity> studentList = new LinkedList<>();
+        for(StudentEntity entity : studentEntities){
+            Student studentDTO = new Student();
+            entity.setName(studentDTO.getName());
+            entity.setSurname(studentDTO.getSurname());
+            entity.setLevel(studentDTO.getLevel());
+            entity.setAge(studentDTO.getAge());
+            entity.setGender(studentDTO.getGender());
+            entity.setCreatedDate(studentDTO.getCreatedDate());
+            studentList.add(entity);
+
+        }
+
+        return studentList;
+    }
+
+    public Object finddate(LocalDate date) {
+        List<StudentEntity>studentEntities = studentRepository.getAllByCreatedDate(date);
+        List<StudentEntity> studentList = new LinkedList<>();
+        for(StudentEntity entity : studentEntities){
+            Student studentDTO = new Student();
+            entity.setName(studentDTO.getName());
+            entity.setSurname(studentDTO.getSurname());
+            entity.setLevel(studentDTO.getLevel());
+            entity.setAge(studentDTO.getAge());
+            entity.setGender(studentDTO.getGender());
+            entity.setCreatedDate(studentDTO.getCreatedDate());
+            studentList.add(entity);
+
+        }
+        return studentList;
+    }
+
+
+    public Object findbetweendate(LocalDate startdate, LocalDate enddate) {
+        List<StudentEntity>studentEntities = studentRepository.getAllByCreatedDateBetween(startdate,enddate);
+        List<StudentEntity> studentList = new LinkedList<>();
+        for(StudentEntity entity : studentEntities){
+            Student studentDTO = new Student();
+            entity.setName(studentDTO.getName());
+            entity.setSurname(studentDTO.getSurname());
+            entity.setLevel(studentDTO.getLevel());
+            entity.setAge(studentDTO.getAge());
+            entity.setGender(studentDTO.getGender());
+            entity.setCreatedDate(studentDTO.getCreatedDate());
+            studentList.add(entity);
+
+        }
         return studentList;
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -55,5 +56,36 @@ private StudentService studentService;
     @GetMapping(value = "/name/{name}")
     public ResponseEntity findname(@PathVariable("name") String name) {
         return ResponseEntity.ok(studentService.findname(name));
+    }
+
+    @GetMapping(value = "/surname/{surname}")
+    public ResponseEntity findsurname(@PathVariable("surname") String surname) {
+        return ResponseEntity.ok(studentService.findsurname(surname));
+    }
+
+    @GetMapping(value = "/level/{level}")
+    public ResponseEntity findlevel(@PathVariable("level") String level) {
+        return ResponseEntity.ok(studentService.findlevel(level));
+    }
+
+    @GetMapping(value = "/age/{age}")
+    public ResponseEntity findage(@PathVariable("age") String age) {
+        return ResponseEntity.ok(studentService.findage(age));
+    }
+
+    @GetMapping(value = "/gender/{gender}")
+    public ResponseEntity findgender(@PathVariable("gender") String gender) {
+        return ResponseEntity.ok(studentService.findgender(gender));
+    }
+
+    @GetMapping(value = "/date/{date}")
+    public ResponseEntity finddate(@PathVariable("date") LocalDate date) {
+        return ResponseEntity.ok(studentService.finddate(date));
+    }
+
+    @GetMapping(value = "/betweendate/{date}")
+    public ResponseEntity findbetweendate(@PathVariable("startdate") LocalDate startdate,
+                                          @PathVariable("endate") LocalDate enddate) {
+        return ResponseEntity.ok(studentService.findbetweendate(startdate,enddate));
     }
 }

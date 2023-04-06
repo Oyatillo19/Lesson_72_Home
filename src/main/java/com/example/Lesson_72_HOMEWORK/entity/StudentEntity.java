@@ -37,7 +37,7 @@ public class StudentEntity {
 
 
     @Column(name = "createddate")
-    private LocalDate createdDate = LocalDate.now();
+    private LocalDate createdDate ;
 
 
 
