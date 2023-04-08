@@ -12,6 +12,17 @@ import java.time.LocalDate;
 @ToString
 
 public class Student {
+
+ public Student() {
+
+ }
+
+ public Student(Integer id, String name, String surname) {
+  this.id = id;
+  this.name = name;
+  this.surname = surname;
+ }
+
  private  Integer id;
   private  String name;
   private  String surname;
